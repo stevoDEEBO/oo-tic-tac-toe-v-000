@@ -30,7 +30,8 @@ class TicTacToe
   end
 
   def position_taken?(location)
-    @board[location] != " " && board[location] != ""
+    if @board[location] != " " && board[location] != ""
+      @board[location] == "X"  || @board[location] == "O"
   end
 
 
