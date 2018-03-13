@@ -50,6 +50,29 @@ class TicTacToe
     display_board
   end
 
+  def won?
+    WIN_COMBINATIONS.detect
+      @board[array[0]] == @board[array[1]] && @board[array[1]] == @board[array[2]] && position_taken?(array[0])
+    end
+  end
+
+  def full?(board)
+    board.all?{|index| index == "X" || index == "O"}
+  end
+
+  def draw?(board)
+    full?(board) && !won?(board)
+  end
+
+  def over?(board)
+    draw?(board) || won?(board)
+  end
+
+  def winner(board)
+    if winXO = won?(board)
+      board[winXO.first]
+    end
+  end
 
 
 
