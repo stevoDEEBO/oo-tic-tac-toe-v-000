@@ -73,3 +73,4 @@ class TicTacToe
       @board[winXO.first]
     end
   end
+end
