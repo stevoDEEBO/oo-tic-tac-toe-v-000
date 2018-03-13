@@ -63,6 +63,7 @@ class TicTacToe
   def draw?
     @board.full? && @board.!won?
   end
+end
 
   def over?
     @board.draw? || @board.won?
