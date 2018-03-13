@@ -56,16 +56,16 @@ class TicTacToe
     end
   end
 
-  def full?(board)
-    board.all?{|index| index == "X" || index == "O"}
+  def full?
+    @board.all?{|index| index == "X" || index == "O"}
   end
 
-  def draw?(board)
-    full?(board) && !won?(board)
+  def draw?
+    @board.full? && @board.!won?
   end
 
-  def over?(board)
-    draw?(board) || won?(board)
+  def over?
+    @board.draw? || @board.won?
   end
 
   def winner(board)
